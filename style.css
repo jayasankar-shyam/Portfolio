@@ -1,30 +1,64 @@
+/*HEADER*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
+
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-/*HEADER*/
-header {
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
   width: 100%;
   height: 100vh;
+
   background: url(imgs/bg1.jpeg);
   background-size: 50% 100%, cover;
   background-position: center;
   clip-path: polygon(50% 0%, 100% 0, 100% 83%, 50% 100%, 0 83%, 0 0);
 }
-.logo {
-  color: rgb(255, 255, 255);
-  font-size: 50px;
-  letter-spacing: 5px;
-  padding-left: 100px;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
 }
-.logo span {
-  color: #05ce91;
+.hamburger {
+  display: none;
 }
-.list {
-  margin-right: 100px;
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
 }
-.list a {
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 5rem;
+}
+
+.nav-link {
   color: rgb(255, 255, 255);
   text-decoration: none;
   padding: 10px 20px;
@@ -32,17 +66,22 @@ header {
   font-size: 20px;
   font-weight: bold;
 }
-.list a:hover {
-  background: #05ce91;
+
+.nav-link:hover {
+  color: #05ce91;
   transition: 0.4s;
 }
-nav {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.nav-logo {
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  letter-spacing: 5px;
+  padding-left: 50px;
 }
+.nav-logo span {
+  color: #05ce91;
+}
+/*INTRO*/
 .intro {
   color: white;
   margin-top: 100px;
@@ -57,42 +96,60 @@ nav {
   font-size: 50px;
   margin: 10px 0px;
 }
+@media only screen and (max-width: 768px) {
+  .intro {
+    margin-left: 30px;
+  }
+  .intro p {
+    font-size: 22px;
+  }
+  .intro h1 {
+    font-size: 35px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+  .nav-logo {
+    padding-left: 0px;
+    font-size: 30px;
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    background: azure;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
 /*BUTTON*/
-.button {
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #ffffff;
-  text-align: center;
-  font-size: 20px;
-  padding: 20px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  margin-top: 20px;
-}
 
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: "\00bb";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
+/*TBD*/
