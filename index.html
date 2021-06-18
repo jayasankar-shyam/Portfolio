@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="typed.min.js"></script>
 
     <title>PORTFOLIO | JAYASANKAR</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="home">
       <nav class="navbar">
-        <a href="#" class="nav-logo">PORT<span>FOLIO</span></a>
+        <a href="#home" class="nav-logo">PORT<span>FOLIO</span></a>
         <ul class="nav-menu">
           <li class="nav-item">
             <a href="#home" class="nav-link">Home</a>
@@ -34,13 +35,49 @@
       </nav>
 
       <div class="intro">
-        <p>Hi , I am</p>
+        <p>Hi , my name is</p>
         <h1>Jayasankar Shyam</h1>
-        <p>And I am a Front End Devoloper</p>
+        <p>And I am a <span id="anim" style="color: #05ce91"></span></p>
         <!--Button TBD-->
       </div>
     </header>
+    <section id="about">
+      <h1 class="abt-head">About Me</h1>
+      <div class="abt-row">
+        <div class="abt-pic">
+          <img src="imgs/pic1.jpg" alt="My pic" />
+        </div>
+        <div class="abt-text">
+          <p id="pname">Hello , I am Jayasankar Shyam</p>
+          <p style="margin-bottom: 20px">
+            I am a <span id="anim2" style="color: #05ce91"></span>
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel
+            incidunt in aperiam ducimus illum labore facere fugiat at quos
+            veniam, necessitatibus laudantium, veritatis excepturi. Iure
+            eligendi doloremque pariatur natus asperiores?
+          </p>
+        </div>
+      </div>
+    </section>
 
     <script src="main.js"></script>
+    <script>
+      let animate = new Typed("#anim", {
+        strings: ["B.Tech Student", "Front End Developer"],
+        typeSpeed: 100,
+        backSpeed: 25,
+        loop: true,
+      });
+    </script>
+    <script>
+      let animat = new Typed("#anim2", {
+        strings: ["B.Tech Student", "Front End Developer"],
+        typeSpeed: 100,
+        backSpeed: 25,
+        loop: true,
+      });
+    </script>
   </body>
 </html>

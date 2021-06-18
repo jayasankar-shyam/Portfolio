@@ -9,6 +9,7 @@
 
 html {
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 li {
@@ -21,11 +22,11 @@ a {
 
 .header {
   width: 100%;
-  height: 100vh;
-
+  height: 80vh;
   background: url(imgs/bg1.jpeg);
   background-size: 50% 100%, cover;
   background-position: center;
+  background-attachment: fixed;
   clip-path: polygon(50% 0%, 100% 0, 100% 83%, 50% 100%, 0 83%, 0 0);
 }
 
@@ -96,6 +97,49 @@ a {
   font-size: 50px;
   margin: 10px 0px;
 }
+
+/*BUTTON*/
+
+/*TBD*/
+/*ABOUT*/
+#about {
+  padding: 100px 50px;
+}
+.abt-head {
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+}
+.abt-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.abt-pic {
+  flex-basis: 40%;
+}
+
+.abt-pic img {
+  width: 100%;
+  padding: 70px;
+  border-radius: 100px;
+
+  margin-right: 0px;
+}
+
+.abt-text {
+  flex-basis: 60%;
+}
+#pname {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.abt-text p {
+  text-align: justify;
+  font-size: 20px;
+}
 @media only screen and (max-width: 768px) {
   .intro {
     margin-left: 30px;
@@ -131,6 +175,21 @@ a {
   .nav-item {
     margin: 2.5rem 0;
   }
+  .abt-pic {
+    flex-basis: 100%;
+  }
+
+  .abt-pic img {
+    width: 100%;
+
+    border-radius: 50%;
+  }
+
+  .abt-text {
+    flex-basis: 100%;
+    padding-top: 10px;
+    padding-left: 30px;
+  }
 
   .hamburger {
     display: block;
@@ -149,7 +208,3 @@ a {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
-
-/*BUTTON*/
-
-/*TBD*/
