@@ -253,19 +253,26 @@ a {
   padding: 10px;
 }
 
-.button {
-  background-color: #05ce91;
-  color: white;
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+form .button input {
+  height: 100%;
+  width: 40%;
+  border-radius: 5px;
   border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  background: #05ce91;
+}
+form .button input:hover {
+  /* transform: scale(0.99); */
+  background: #357562;
 }
 #footer {
   background: #05ce91;

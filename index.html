@@ -73,7 +73,7 @@
       <h1 class="abt-head">About Me</h1>
       <div class="abt-row">
         <div class="abt-pic">
-          <img src="imgs/pic1.jpg" alt="My pic" />
+          <img src="imgs/pic.png" alt="My pic" />
         </div>
         <div class="abt-text">
           <p id="pname">Hello , I am Jayasankar Shyam</p>
@@ -129,12 +129,14 @@
           <img src="imgs/conta.png" alt="minion" />
         </div>
         <div class="cont-form">
-          <form>
-            <input type="text" name="" placeholder="Name" />
-            <input type="email" name="" placeholder="E-mail" /><br />
-            <textarea cols="40" rows="10" placeholder="Message"></textarea
-            ><br />
-            <button class="button">Submit</button>
+          <form method="post" autocomplete="off" name="trialsheet"> 
+            <input id="name" type="text" name="Name" placeholder="Name" />
+            <input id ="email" type="email" name="Email" placeholder="E-mail" /><br />
+            <input id ="message" type="text" name="Message" placeholder="Message" /><br />
+            
+            <div class="button">
+              <input id="button" type="submit" name="submit" value="Submit"  />
+            </div>
           </form>
         </div>
       </div>
@@ -159,7 +161,7 @@
       </div>
     </section>
     <section id="footer">
-      <p>&#169 Jayasankar Shyam 2021</p>
+      <p>&#169 Jayasankar Shyam</p>
     </section>
     <button
         type="button"
@@ -168,6 +170,17 @@
         >
   <i class="fa fa-arrow-up"></i>
 </button>
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzzhiBZN84l8fXklkKDlYYEQw8GEc0mQe3Ko0wOYKdyV5h1AfFI-qXfE7oQGhlKYDrHxA/exec'
+            const form = document.forms['Portfolio']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
 
     <script src="main.js"></script>
   </body>
